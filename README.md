@@ -43,7 +43,10 @@ user, needed for use with the Vagrant VM tool.
             # The ERB template for /etc/sudoers normally comes from the sudo
             # cookbook.  But you can replace that if you need different
             # options in the file.
-            :template_cookbook => 'something_else',
+            #:template_cookbook => 'something_else',
+            # This cookbook provides an alternate template that adds NOPASSWD:
+            # to each sudoers entry. To use it, set :template_file.
+            :template_file => 'sudoers_nopasswd.erb',
         }
     }
 

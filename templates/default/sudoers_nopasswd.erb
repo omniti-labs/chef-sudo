@@ -1,0 +1,9 @@
+# Managed by chef
+#includedir /etc/sudoers.d
+root    ALL=(ALL) ALL
+<% if @groups then @groups.each do |group| %>
+%<%= group %> ALL=(ALL) NOPASSWD: ALL
+<% end end %>
+<% if @users then @users.each do |user| %>
+<%= user %> ALL=(ALL) NOPASSWD: ALL
+<% end end %>
